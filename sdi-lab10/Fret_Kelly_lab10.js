@@ -24,7 +24,7 @@ var fiveMultiples = function(numThou, num5) {
 		incrFive = incrOne * num5;
 		incrOne++;
 		console.log("Increment by five = " + incrFive);
-		console.log("\n");
+		//console.log("\n");
 		
 		incrSum = incrSum + incrFive;
 		//console.log("Increment sum = " + incrSum);
