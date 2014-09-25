@@ -9,11 +9,11 @@
 
 
 // Global variables
-var numFive = 5;
+//var numFive = 5;
 var numThousand = 21;
 
 
-var fiveMultiples = function(numThou, num5) {
+var fiveMultiples = function(numThou, multNum) {
 	
 	incrFive = 0;
 	incrOne = 1;
@@ -21,7 +21,7 @@ var fiveMultiples = function(numThou, num5) {
 	
 	while (incrOne < numThou) {
 		
-		incrFive = incrOne * num5;
+		incrFive = incrOne * multNum;
 		incrOne++;
 		console.log("Increment by five = " + incrFive);
 		//console.log("\n");
@@ -36,9 +36,11 @@ return incrSum;
 	
 };
 
-fiveMultiples(numThousand, numFive);
+userNum = parseInt(Prompt("Enter a \"3 or 5\": ", "3"));
 
-console.log("Increment sum = " + incrSum);
+sumResult = fiveMultiples(numThousand, userNum);
+
+console.log("Increment sum = " + sumResult);
 
 
 
