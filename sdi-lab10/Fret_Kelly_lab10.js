@@ -9,43 +9,47 @@
 
 
 // Global variables
-//var numFive = 5;
-var numThousand = 11;
+//var numThousand = 1000;
+//var num1 = 3;
+//var num2 = 5;
 
 
-var fiveMultiples = function(numThou, multNum) {
+var fiveMultiples = function(numThou, mult3, mult5) {
 	
-	incrFive = 0;
-	incrOne = 1;
-	incrSum = 0;
+	incrThree  = 0;
+	incrFive   = 0;
+	incrSum   = 0;
 	
-	while (incrOne < numThou) {
+	for (var i = 1; i < numThou; i++) {
 		
-		incrFive = incrOne * multNum;
-		incrOne++;
-		console.log("Increment by five = " + incrFive);
-		//console.log("\n");
+		mult3 = 3 * i;
+		mult5 = 5 * i;
+	if (mult3 < numThou) {	
+		console.log("mult3 = " + mult3);
+		incrThree = incrThree + mult3;
+		console.log("IncrThree = " + incrThree);
+		console.log("\n");
 		
-		incrSum = incrSum + incrFive;
-		//console.log("Increment sum = " + incrSum);
+		if(mult5 < numThou) {
+			console.log("mult5 = " + mult5);
+			incrFive = incrFive + mult5;
+			console.log("IncrFive = " + incrFive);
+			console.log("\n");
+		} 
 		
-		//break;
-	};
+	} else {
+		//console.log("Reached my limit.");
+		break;
+	}	
+	
+	}
+	incrSum = incrThree + incrFive;
 	
 return incrSum;
 	
 };
-
-userNum = parseInt(prompt("Enter a \"3 or 5\": ", "3"));
-
-	if (userNum === 3 || userNum === 5) {
 		
-		multResult = fiveMultiples(numThousand, userNum);
-	} else {
-		console.log("Invalid entry.");
-	}
-	
-// multResult = fiveMultiples(numThousand, userNum);
+multResult = fiveMultiples(10, 3, 5);
 
 console.log("Increment sum = " + multResult);
 
