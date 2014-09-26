@@ -73,7 +73,7 @@
 // Global Variables
 var intFive = 59;
 var pbNum = 35;
-
+var returnedArray = new Array();
 
 
 var pbnumGenerator = function(numArg1, numArg2) {
@@ -83,59 +83,42 @@ var pbnumGenerator = function(numArg1, numArg2) {
 	
 	
 	for (var i = 0; i < 5; i++) {
-		//console.log(i);
-		pballArray[i] = (Math.floor(Math.random() * intFive) + 1);
-		//console.log("Initial five: " + pballArray);
-		console.log(pballArray);
+		
+		// pballArray[i] = (Math.floor(Math.random() * numArg1) + 1);
+		pballArray[i] = Math.round(Math.abs((Math.random() * numArg1) + 1));
+		//pballArray[i] = Math.abs((Math.random() * numArg1) + 1);
+		console.log(pballArray[i]);
+			
+		if (pballArray[i] === pballArray[i] - 1) {
+			pballArray[i] = pballArray[i] + 1;
+			console.log(pballArray[i]);
+		}
 		
 		if (i === 4) {
 			
-			console.log("i = " + i);
-			pballArray[5] = (Math.floor(Math.random() * pbNum) + 1);
-			console.log(pballArray[5]);
-			
+			pballArray[5] = (Math.floor(Math.random() * numArg2) + 1);
 		}
-		
-		// if (i === 5) {
-			// break;
-		// }
 	}
-	
-	console.log("Initial five: " + pballArray + pballArray[5]);
-	
-		
 
-	
-return;
+return pballArray;
 };
 
 
 // MAIN CODE
 
-pbnumGenerator(intFive, pbNum);
+returnedArray = pbnumGenerator(intFive, pbNum);
 
-//console.log();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("Initial five: \n");
+for (var i = 0 ; i < 5; i++) {
+	
+	console.log(returnedArray[i]);
+	
+	if (i === 4) {
+		
+	console.log("Powerball: \n");
+	console.log(returnedArray[5]);
+	}
+}
 
 
 
